@@ -1,0 +1,1162 @@
+TASK 1:
+
+1. import java.util.*;
+class ReverseString
+{
+  public static void main(String args[])
+  {
+    String original, reverse = "";
+    Scanner in = new Scanner(System.in);
+
+    System.out.println("Enter a string to reverse");
+    original = in.nextLine();
+
+    int length = original.length();
+
+    for (int i = length - 1 ; i >= 0 ; i--)
+      reverse = reverse + original.charAt(i);
+
+    System.out.println("Reverse of the string: " + reverse);
+  }
+}
+
+2. class REV
+{
+    public static void main(String[] args) 
+    {
+        int n, res,i,j=0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter number of elements in the array:");
+        n = s.nextInt();
+        int array[] = new int[n];
+        int rev[] = new int[n];
+        System.out.println("Enter "+n+" elements ");
+        for( i=0; i < n; i++)
+        {
+            array[i] = s.nextInt();
+        }
+        System.out.println("Reverse of an array is :");
+        for( i=n;i>0 ; i--,j++)
+        {
+            rev[j] = array[i-1];
+            System.out.println(rev[j]);
+    
+        }
+    }
+}
+
+3.using namespace std; 
+  
+// A structure to store an element and its current count 
+struct eleCount 
+{ 
+    int e;  // Element 
+    int c;  // Count 
+}; 
+  
+// Prints elements with more than n/k occurrences in arr[] of 
+// size n. If there are no such elements, then it prints nothing. 
+void moreThanNdK(int arr[], int n, int k) 
+{ 
+    // k must be greater than 1 to get some output 
+    if (k < 2) 
+       return; 
+  
+    /* Step 1: Create a temporary array (contains element 
+       and count) of size k-1. Initialize count of all 
+       elements as 0 */
+    struct eleCount temp[k-1]; 
+    for (int i=0; i<k-1; i++) 
+        temp[i].c = 0; 
+  
+    /* Step 2: Process all elements of input array */
+    for (int i = 0; i < n; i++) 
+    { 
+        int j; 
+  
+        /* If arr[i] is already present in 
+           the element count array, then increment its count */
+        for (j=0; j<k-1; j++) 
+        { 
+            if (temp[j].e == arr[i]) 
+            { 
+                 temp[j].c += 1; 
+                 break; 
+            } 
+        } 
+  
+        /* If arr[i] is not present in temp[] */
+        if (j == k-1) 
+        { 
+            int l; 
+              
+            /* If there is position available in temp[], then place  
+              arr[i] in the first available position and set count as 1*/
+            for (l=0; l<k-1; l++) 
+            { 
+                if (temp[l].c == 0) 
+                { 
+                    temp[l].e = arr[i]; 
+                    temp[l].c = 1; 
+                    break; 
+                } 
+            } 
+  
+            /* If all the position in the temp[] are filled, then  
+               decrease count of every element by 1 */
+            if (l == k-1) 
+                for (l=0; l<k; l++) 
+                    temp[l].c -= 1; 
+        } 
+    } 
+  
+    /*Step 3: Check actual counts of potential candidates in temp[]*/
+    for (int i=0; i<k-1; i++) 
+    { 
+        // Calculate actual count of elements  
+        int ac = 0;  // actual count 
+        for (int j=0; j<n; j++) 
+            if (arr[j] == temp[i].e) 
+                ac++; 
+  
+        // If actual count is more than n/k, then print it 
+        if (ac > n/k) 
+           cout << "Number:" << temp[i].e 
+                << " Count:" << ac << endl; 
+    } 
+} 
+  
+/* Driver program to test above function */
+int main() 
+{ 
+    cout << "First Test\n"; 
+    int arr1[] = {4, 5, 6, 7, 8, 4, 4}; 
+    int size = sizeof(arr1)/sizeof(arr1[0]); 
+    int k = 3; 
+    moreThanNdK(arr1, size, k); 
+  
+    cout << "\nSecond Test\n"; 
+    int arr2[] = {4, 2, 2, 7}; 
+    size = sizeof(arr2)/sizeof(arr2[0]); 
+    k = 3; 
+    moreThanNdK(arr2, size, k); 
+  
+    cout << "\nThird Test\n"; 
+    int arr3[] = {2, 7, 2}; 
+    size = sizeof(arr3)/sizeof(arr3[0]); 
+    k = 2; 
+    moreThanNdK(arr3, size, k); 
+  
+    cout << "\nFourth Test\n"; 
+    int arr4[] = {2, 3, 3, 2}; 
+    size = sizeof(arr4)/sizeof(arr4[0]); 
+    k = 3; 
+    moreThanNdK(arr4, size, k); 
+  
+    return 0; 
+} 
+
+4.class demo {  
+ public static void main(string arg[]) {  
+  System.out.println("Before swapping");  
+  int x = 10;  
+  int y = 20;  
+  System.out.println("value of x:" + x);  
+  System.out.println("value of y:" + y);  
+  system.out.println("After swapping");  
+  x = x + y;  
+  y = x - y;  
+  x = x - y;  
+  System.out.println("value of x:" + x);  
+  System.out.println("value of y:" + y);  
+ }  
+}   
+
+5.
+#include<bits/stdc++.h> 
+using namespace std; 
+  
+// Function to check if x is power of 2 
+bool isPowerOfTwo(int n) 
+{ 
+   if(n==0) 
+   return false; 
+  
+   return (ceil(log2(n)) == floor(log2(n))); 
+} 
+  
+// Driver program 
+int main() 
+{ 
+    isPowerOfTwo(31)? cout<<"Yes"<<endl: cout<<"No"<<endl; 
+    isPowerOfTwo(64)? cout<<"Yes"<<endl: cout<<"No"<<endl; 
+  
+    return 0; 
+} 
+
+TASK 2 and Task 3:
+
+1. public class AddMatrices {
+
+    public static void main(String[] args) {
+        int rows = 2, columns = 3;
+        int[][] firstMatrix = { {2, 3, 4}, {5, 2, 3} };
+        int[][] secondMatrix = { {-4, 5, 3}, {5, 6, 3} };
+
+        // Adding Two matrices
+        int[][] sum = new int[rows][columns];
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+            }
+        }
+
+        // Displaying the result
+        System.out.println("Sum of two matrices is: ");
+        for(int[] row : sum) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+2.  public class MultiplyMatrices {
+
+    public static void main(String[] args) {
+        int r1 = 2, c1 = 3;
+        int r2 = 3, c2 = 2;
+        int[][] firstMatrix = { {3, -2, 5}, {3, 0, 4} };
+        int[][] secondMatrix = { {2, 3}, {-9, 0}, {0, 4} };
+
+        // Mutliplying Two matrices
+        int[][] product = new int[r1][c2];
+        for(int i = 0; i < r1; i++) {
+            for (int j = 0; j < c2; j++) {
+                for (int k = 0; k < c1; k++) {
+                    product[i][j] += firstMatrix[i][k] * secondMatrix[k][j];
+                }
+            }
+        }
+
+        // Displaying the result
+        System.out.println("Sum of two matrices is: ");
+        for(int[] row : product) {
+            for (int column : row) {
+                System.out.print(column + "    ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+3.public class MatrixTransposeExample{  
+public static void main(String args[]){  
+//creating a matrix  
+int original[][]={{1,3,4},{2,4,3},{3,4,5}};    
+    
+//creating another matrix to store transpose of a matrix  
+int transpose[][]=new int[3][3];  //3 rows and 3 columns  
+    
+//Code to transpose a matrix  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+transpose[i][j]=original[j][i];  
+}    
+}    
+  
+System.out.println("Printing Matrix without transpose:");  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+System.out.print(original[i][j]+" ");    
+}    
+System.out.println();//new line    
+}    
+System.out.println("Printing Matrix After Transpose:");  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+System.out.print(transpose[i][j]+" ");    
+}    
+System.out.println();//new line    
+}    
+}}  
+
+4.public class Frequency {
+
+    public static void main(String[] args) {
+        String str = "This website is awesome.";
+        char ch = 'e';
+        int frequency = 0;
+
+        for(int i = 0; i < str.length(); i++) {
+            if(ch == str.charAt(i)) {
+                ++frequency;
+            }
+        }
+
+        System.out.println("Frequency of " + ch + " = " + frequency);
+    }
+}
+
+5. public class Time {
+
+    int seconds;
+    int minutes;
+    int hours;
+
+    public Time(int hours, int minutes, int seconds) {
+        this.hours = hours;
+        this.minutes = minutes;
+        this.seconds = seconds;
+    }
+
+    public static void main(String[] args) {
+
+      // create objects of Time class
+        Time start = new Time(8, 12, 15);
+        Time stop = new Time(12, 34, 55);
+        Time diff;
+
+        // call difference method
+        diff = difference(start, stop);
+
+        System.out.printf("TIME DIFFERENCE: %d:%d:%d - ", start.hours, start.minutes, start.seconds);
+        System.out.printf("%d:%d:%d ", stop.hours, stop.minutes, stop.seconds);
+        System.out.printf("= %d:%d:%d\n", diff.hours, diff.minutes, diff.seconds);
+    }
+
+    public static Time difference(Time start, Time stop)
+    {
+        Time diff = new Time(0, 0, 0);
+
+        // if start second is greater
+        // convert minute of stop into seconds
+        // and add seconds to stop second
+        if(start.seconds > stop.seconds){
+            --stop.minutes;
+            stop.seconds += 60;
+        }
+
+        diff.seconds = stop.seconds - start.seconds;
+
+        // if start minute is greater
+        // convert stop hour into minutes
+        // and add minutes to stop minutes
+        if(start.minutes > stop.minutes){
+            --stop.hours;
+            stop.minutes += 60;
+        }
+
+        diff.minutes = stop.minutes - start.minutes;
+        diff.hours = stop.hours - start.hours;
+
+        // return the difference time
+        return(diff);
+    }
+}
+
+6.public class RemoveAllSpace {  
+    public static void main(String[] args) {  
+        String str = "India     Is My    Country";  
+        //1st way  
+        String noSpaceStr = str.replaceAll("\\s", ""); // using built in method  
+        System.out.println(noSpaceStr);  
+        //2nd way  
+        char[] strArray = str.toCharArray();  
+        StringBuffer stringBuffer = new StringBuffer();  
+        for (int i = 0; i < strArray.length; i++) {  
+            if ((strArray[i] != ' ') && (strArray[i] != '\t')) {  
+                stringBuffer.append(strArray[i]);  
+            }  
+        }  
+        String noSpaceStr2 = stringBuffer.toString();  
+        System.out.println(noSpaceStr2);  
+    }  
+}  
+
+7.import java.text.SimpleDateFormat;  
+import java.util.Date;  
+public class StringToDateExample1 {  
+public static void main(String[] args)throws Exception {  
+    String sDate1="31/12/1998";  
+    Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);  
+    System.out.println(sDate1+"\t"+date1);  
+}  
+} 
+
+8.import java.util.Arrays;
+
+public class Concat {
+
+    public static void main(String[] args) {
+        int[] array1 = {1, 2, 3};
+        int[] array2 = {4, 5, 6};
+
+        int aLen = array1.length;
+        int bLen = array2.length;
+        int[] result = new int[aLen + bLen];
+
+        System.arraycopy(array1, 0, result, 0, aLen);
+        System.arraycopy(array2, 0, result, aLen, bLen);
+
+        System.out.println(Arrays.toString(result));
+    }
+}
+
+9. public class CharString {
+
+    public static void main(String[] args) {
+        char ch = 'c';
+        String st = Character.toString(ch);
+        // Alternatively
+        // st = String.valueOf(ch);
+
+        System.out.println("The string is: " + st);
+    }
+}
+public class CharString {
+
+    public static void main(String[] args) {
+        char[] ch = {'a', 'e', 'i', 'o', 'u'};
+
+        String st = String.valueOf(ch);
+        String st2 = new String(ch);
+
+        System.out.println(st);
+        System.out.println(st2);
+    }
+}
+
+import java.util.Arrays;
+
+public class StringChar {
+
+    public static void main(String[] args) {
+        String st = "This is great";
+
+        char[] chars = st.toCharArray();
+        System.out.println(Arrays.toString(chars));
+    }
+}
+
+10. import java.util.Arrays; 
+import java.util.Collections; 
+  
+// Java code to find sum of  
+// maximum of all subsets of array 
+class GFG  
+{ 
+  
+    // Method returns sum of maximum of all subsets 
+    static int sumOfMaximumOfSubsets(Integer arr[], int N)  
+    { 
+        // sorting array in decreasing order 
+        Arrays.sort(arr, Collections.reverseOrder()); 
+  
+        // initializing sum with first element 
+        int sum = arr[0]; 
+        for (int i = 1; i < N; i++) 
+        { 
+            // calculating evaluation similar to horner's rule 
+            sum = 2 * sum + arr[i]; 
+        } 
+  
+        return sum; 
+    } 
+  
+    // Driver code 
+    public static void main(String[] args)  
+    { 
+        Integer arr[] = {3, 2, 5}; 
+        int N = arr.length; 
+        System.out.println(sumOfMaximumOfSubsets(arr, N)); 
+    } 
+} 
+
+
+TASK 4:
+
+1. public class IdentityMatrix     
+{    
+    public static void main(String[] args) {    
+        int rows, cols;    
+        boolean flag = true;    
+            
+        //Initialize matrix a    
+        int a[][] = {       
+                        {1, 0, 0},    
+                        {0, 1, 0},    
+                        {0, 0, 1}    
+                    };    
+            
+        //Calculates the number of rows and columns present in the given matrix    
+    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Checks whether given matrix is a square matrix or not    
+        if(rows != cols){    
+            System.out.println("Matrix should be a square matrix");    
+        }    
+        else {    
+            //Checks if diagonal elements are equal to 1 and rest of elements are 0    
+            for(int i = 0; i < rows; i++){    
+                for(int j = 0; j < cols; j++){    
+                  if(i == j && a[i][j] != 1){    
+                      flag = false;    
+                      break;    
+                  }    
+                  if(i != j && a[i][j] != 0){    
+                      flag = false;    
+                      break;    
+                  }    
+                }    
+            }    
+                
+            if(flag)    
+                System.out.println("Given matrix is an identity matrix");    
+            else    
+                System.out.println("Given matrix is not an identity matrix");    
+        }    
+    }    
+}    
+
+2. public class SumofRowColumn    
+{    
+    public static void main(String[] args) {    
+        int rows, cols, sumRow, sumCol;    
+            
+        //Initialize matrix a    
+        int a[][] = {       
+                        {1, 2, 3},    
+                        {4, 5, 6},    
+                        {7, 8, 9}    
+                    };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        //Calculates sum of each row of given matrix    
+        for(int i = 0; i < rows; i++){    
+            sumRow = 0;    
+            for(int j = 0; j < cols; j++){    
+              sumRow = sumRow + a[i][j];    
+            }    
+            System.out.println("Sum of " + (i+1) +" row: " + sumRow);    
+        }    
+            
+        //Calculates sum of each column of given matrix    
+        for(int i = 0; i < cols; i++){    
+            sumCol = 0;    
+            for(int j = 0; j < rows; j++){    
+              sumCol = sumCol + a[j][i];    
+            }    
+            System.out.println("Sum of " + (i+1) +" column: " + sumCol);    
+        }    
+    }    
+}    
+
+3. public class MatrixMultiplicationExample{  
+public static void main(String args[]){  
+//creating two matrices    
+int a[][]={{1,1,1},{2,2,2},{3,3,3}};    
+int b[][]={{1,1,1},{2,2,2},{3,3,3}};    
+    
+//creating another matrix to store the multiplication of two matrices    
+int c[][]=new int[3][3];  //3 rows and 3 columns  
+    
+//multiplying and printing multiplication of 2 matrices    
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+c[i][j]=0;      
+for(int k=0;k<3;k++)      
+{      
+c[i][j]+=a[i][k]*b[k][j];      
+}//end of k loop  
+System.out.print(c[i][j]+" ");  //printing matrix element  
+}//end of j loop  
+System.out.println();//new line    
+}    
+}}  
+
+4. public class EqualMatrix    
+{    
+    public static void main(String[] args) {    
+        int row1, col1, row2, col2;    
+        boolean flag = true;    
+            
+        //Initialize matrix a    
+        int a[][] = {       
+                        {1, 2, 3},    
+                        {8, 4, 6},    
+                        {4, 5, 7}    
+                    };    
+              
+          //Initialize matrix b    
+        int b[][] = {       
+                        {1, 2, 3},    
+                        {8, 4, 6},    
+                        {4, 5, 7}    
+            };    
+              
+        //Calculates the number of rows and columns present in the first matrix    
+    
+          row1 = a.length;    
+        col1 = a[0].length;    
+            
+        //Calculates the number of rows and columns present in the second matrix    
+    
+          row2 = b.length;    
+        col2 = b[0].length;    
+            
+        //Checks if dimensions of both the matrices are equal    
+        if(row1 != row2 || col1 != col2){    
+            System.out.println("Matrices are not equal");    
+        }    
+        else {    
+            for(int i = 0; i < row1; i++){    
+                for(int j = 0; j < col1; j++){    
+                  if(a[i][j] != b[i][j]){    
+                      flag = false;    
+                      break;    
+                  }    
+                }    
+            }    
+                
+            if(flag)    
+                System.out.println("Matrices are equal");    
+            else    
+                System.out.println("Matrices are not equal");    
+        }    
+    }    
+}    
+
+5. import java.util.Scanner;
+public class Lower_Matrix
+{
+public static void main(String args[])
+    {
+        int a[][] = new int[5][5];
+        System.out.println("Enter the order of your Matrics ");
+        System.out.println("Enter the rows:");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println("Enter the columns:");
+        Scanner s = new Scanner(System.in);
+        int m = s.nextInt();
+        if(n == m)
+         {        
+             System.out.println("Enter your elements:");
+              for(int i = 0; i < n; i++)
+            {
+                for(int j = 0; j < n; j++)
+                {      
+ 
+                     Scanner ss = new Scanner(System.in);
+                     a[i][j] = ss.nextInt();
+                     System.out.print(" ");
+                 }
+            }
+              System.out.println("You have entered:");
+              for(int i=0; i<n; i++)
+               {
+                for(int j=0;j<n;j++)
+                {      
+                     System.out.print(a[i][j] + " ");
+                 }
+                System.out.println("");
+               }
+              System.out.println("The Lower Triangular Matrix is:");
+              for(int i=0;i<n;i++)
+               {
+                for(int j=0;j<n;j++)
+                 {
+                  if(i>=j)
+                   {
+                     System.out.print(a[i][j] +" ");
+                   }
+                else
+                {
+                    System.out.print("0"+" ");
+                } 
+              }
+            System.out.println("");
+           }
+        }
+         else
+        {
+            System.out.println("you have entered improper order");
+        }
+   }
+}
+
+6.public class UpperTriangular    
+{    
+    public static void main(String[] args) {    
+        int rows, cols;    
+            
+        //Initialize matrix a    
+        int a[][] = {       
+                        {1, 2, 3},    
+                        {8, 6, 4},    
+                        {4, 5, 6}    
+                    };    
+              
+          //Calculates number of rows and columns present in given matrix    
+          rows = a.length;    
+        cols = a[0].length;    
+            
+        if(rows != cols){    
+            System.out.println("Matrix should be a square matrix");    
+        }    
+        else {    
+            //Performs required operation to convert given matrix into upper triangular matrix    
+            System.out.println("Upper triangular matrix: ");    
+            for(int i = 0; i < rows; i++){    
+                for(int j = 0; j < cols; j++){    
+                  if(i > j)    
+                    System.out.print("0 ");    
+                  else    
+                    System.out.print(a[i][j] + " ");    
+                }    
+                System.out.println();    
+            }    
+        }    
+    }    
+}    
+
+7. import java.util.Scanner;
+public class Frequency
+{
+    public static void main(String[] args) 
+    {
+        int p, q, count1 = 0, count2 = 0;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter number of rows in matrix:");
+        p = s.nextInt();
+        System.out.print("Enter number of columns in matrix:");
+        q = s.nextInt();
+        int a[][] = new int[p][q];
+        System.out.println("Enter all the elements of matrix:");
+        for (int i = 0; i < p; i++) 
+        {
+            for (int j = 0; j < q; j++) 
+            {
+                a[i][j] = s.nextInt();
+            }
+        }
+        System.out.println("Given Matrix:");
+        for (int i = 0; i < p; i++) 
+        {
+            for (int j = 0; j < q; j++) 
+            {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println("");
+        }
+        for (int i = 0; i < p; i++) 
+        {
+            for (int j = 0; j < q; j++) 
+            {
+                if((a[i][j] % 2) == 0)
+                {
+                    count1++;
+                }
+                else
+                {
+                    count2++;
+                }
+            }
+        }
+        System.out.println("Even number frequency:"+count1);
+        System.out.println("Odd number frequency:"+count2);
+    }
+}
+
+8. public class MatrixTransposeExample{  
+public static void main(String args[]){  
+//creating a matrix  
+int original[][]={{1,3,4},{2,4,3},{3,4,5}};    
+    
+//creating another matrix to store transpose of a matrix  
+int transpose[][]=new int[3][3];  //3 rows and 3 columns  
+    
+//Code to transpose a matrix  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+transpose[i][j]=original[j][i];  
+}    
+}    
+  
+System.out.println("Printing Matrix without transpose:");  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+System.out.print(original[i][j]+" ");    
+}    
+System.out.println();//new line    
+}    
+System.out.println("Printing Matrix After Transpose:");  
+for(int i=0;i<3;i++){    
+for(int j=0;j<3;j++){    
+System.out.print(transpose[i][j]+" ");    
+}    
+System.out.println();//new line    
+}    
+}}  
+
+9. public class LongestRepeatingSequence {  
+    //Checks for the largest common prefix  
+    public static String lcp(String s, String t){  
+        int n = Math.min(s.length(),t.length());  
+        for(int i = 0; i < n; i++){  
+            if(s.charAt(i) != t.charAt(i)){  
+                return s.substring(0,i);  
+            }  
+        }  
+        return s.substring(0,n);  
+    }  
+  
+    public static void main(String[] args) {  
+        String str = "acbdfghybdf";  
+        String lrs="";  
+        int n = str.length();  
+        for(int i = 0; i < n; i++){  
+            for(int j = i+1; j < n; j++){  
+                //Checks for the largest common factors in every substring  
+                String x = lcp(str.substring(i,n),str.substring(j,n));  
+                //If the current prefix is greater than previous one  
+                //then it takes the current one as longest repeating sequence  
+                if(x.length() > lrs.length()) lrs=x;  
+            }  
+        }  
+        System.out.println("Longest repeating sequence: "+lrs);  
+    }  
+}  
+
+
+TASK 5:
+
+1. public class DuplicateCharacters {  
+     public static void main(String[] args) {  
+        String string1 = "Great responsibility";  
+        int count;  
+          
+        //Converts given string into character array  
+        char string[] = string1.toCharArray();  
+          
+        System.out.println("Duplicate characters in a given string: ");  
+        //Counts each character present in the string  
+        for(int i = 0; i <string.length; i++) {  
+            count = 1;  
+            for(int j = i+1; j <string.length; j++) {  
+                if(string[i] == string[j] && string[i] != ' ') {  
+                    count++;  
+                    //Set string[j] to 0 to avoid printing visited character  
+                    string[j] = '0';  
+                }  
+            }  
+            //A character is considered as duplicate if count is greater than 1  
+            if(count > 1 && string[i] != '0')  
+                System.out.println(string[i]);  
+        }  
+    }  
+}  
+
+2. public class SecondLargestInArrayExample{  
+public static int getSecondLargest(int[] a, int total){  
+int temp;  
+for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[total-2];  
+}  
+public static void main(String args[]){  
+int a[]={1,2,5,6,3,2};  
+int b[]={44,66,99,77,33,22,55};  
+System.out.println("Second Largest: "+getSecondLargest(a,6));  
+System.out.println("Second Largest: "+getSecondLargest(b,7));  
+}}  
+
+3. class NoOfOccurenceOfCharacters { 
+    static final int MAX_CHAR = 256; 
+  
+    static void getOccuringChar(String str) 
+    { 
+        // Create an array of size 256 i.e. ASCII_SIZE 
+        int count[] = new int[MAX_CHAR]; 
+  
+        int len = str.length(); 
+  
+        // Initialize count array index 
+        for (int i = 0; i < len; i++) 
+            count[str.charAt(i)]++; 
+  
+        // Create an array of given String size 
+        char ch[] = new char[str.length()]; 
+        for (int i = 0; i < len; i++) { 
+            ch[i] = str.charAt(i); 
+            int find = 0; 
+            for (int j = 0; j <= i; j++) { 
+  
+                // If any matches found 
+                if (str.charAt(i) == ch[j])  
+                    find++;                 
+            } 
+  
+            if (find == 1)  
+                System.out.println("Number of Occurrence of " + 
+                 str.charAt(i) + " is:" + count[str.charAt(i)]);             
+        } 
+    } 
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner(System.in); 
+        String str = "geeksforgeeks"; 
+        getOccuringChar(str); 
+    } 
+} 
+
+4. public class Exercise22 {
+static void  pairs_value(int inputArray[], int inputNumber)
+  {
+  System.out.println("Pairs of elements and their sum : ");
+ 
+  for (int i =  0; i < inputArray.length; i++)
+  {
+  for (int j  = i+1; j < inputArray.length; j++)
+  {
+  if(inputArray[i]+inputArray[j] == inputNumber)
+  {
+  System.out.println(inputArray[i]+" + "+inputArray[j]+" =  "+inputNumber);
+  }
+  }
+  }
+  }
+  
+  public static void  main(String[] args)
+  {
+  pairs_value(new int[] {2, 7, 4, -5, 11, 5, 20}, 15);
+  
+  pairs_value(new int[] {14, -15, 9, 16, 25, 45, 12, 8}, 30);
+  
+  }
+}
+
+5.import java.util.Arrays;
+import java.util.Scanner;
+public class sub_arrays {
+   public static void main(String args[]){
+      //Reading the array from the user
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter the size of the array that is to be created: ");
+      int size = sc.nextInt();
+      int[] myArray = new int[size];
+      System.out.println("Enter the elements of the array: ");
+      for(int i=0; i<size; i++){
+         myArray[i] = sc.nextInt();
+      }
+      //Reading the number
+      System.out.println("Enter the required sum: ");
+      int reqSum = sc.nextInt();
+      System.out.println("The array created is: "+Arrays.toString(myArray));
+      System.out.println("sub arrays whose sum is: "+reqSum);
+      for(int i=0; i<myArray.length; i++){
+         int sum = 0;
+         for (int j=i; j<myArray.length; j++){
+            sum = sum + myArray[j];
+            if(sum == reqSum){
+               System.out.println(Arrays.toString(Arrays.copyOfRange(myArray, i, j+1)));
+            }
+         }
+      }
+   }
+}
+
+6.public class MainClass
+{
+    static void isBinaryOrNot(int number)
+    {
+        boolean isBinary = true;
+ 
+        int copyOfNumber = number;
+ 
+        while (copyOfNumber != 0)
+        {
+            int temp = copyOfNumber%10;   //Gives last digit of the number
+ 
+            if(temp > 1)
+            {
+                isBinary = false;
+                break;
+            }
+            else
+            {
+                copyOfNumber = copyOfNumber/10;    //Removes last digit from the number
+            }
+        }
+ 
+        if (isBinary)
+        {
+            System.out.println(number+" is a binary number");
+        }
+        else
+        {
+            System.out.println(number+" is not a binary number");
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        isBinaryOrNot(128956);
+ 
+        isBinaryOrNot((101110));
+ 
+        isBinaryOrNot((42578));
+ 
+        isBinaryOrNot((10110101));
+    }
+}
+
+7. public class RotationString {  
+    public static boolean checkRotation(String st1, String st2) {  
+        if (st1.length() != st2.length()) {  
+            return false;  
+        }  
+        String st3 = st1 + st1;  
+        if (st3.contains(st2))  
+            return true;  
+        else  
+            return false;  
+    }  
+   
+    public static void main(String[] args) {  
+        String str1 = "avajava";  
+        String str2 = "javaava";  
+        System.out.println("Checking if a string is rotation of another");  
+        if (checkRotation(str1, str2)) {  
+            System.out.println("Yes " + str2 + " is rotation of " + str1);  
+        } else {  
+            System.out.println("No " + str2 + " is not rotation of " + str1);  
+        }  
+    }  
+}  
+
+8.  import java.util.Arrays;
+import java.util.Scanner;
+public class ZerosFromNonZeros {
+   public static void main(String args[]){
+      //Reading the array from the user
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter the size of the array that is to be created: ");
+      int size = sc.nextInt();
+      int[] myArray = new int[size];
+      System.out.println("Enter the elements of the array: ");
+      for(int i=0; i<size; i++){
+         myArray[i] = sc.nextInt();
+      }
+      System.out.println("The array created is: "+Arrays.toString(myArray));
+      System.out.println("Resultant array: ");
+      int pos = 0;
+      for(int i=0; i<myArray.length; i++){
+         if(myArray[i]!=0){
+            myArray[pos]=myArray[i];
+            pos++;
+         }
+      }
+      while(pos<myArray.length) {
+         myArray[pos] = 0;
+         pos++;
+      }
+      System.out.println("The array created is: "+Arrays.toString(myArray));
+   }
+}
+
+9. public static int solution(int[] A) {
+
+        Set<Integer> set = new TreeSet<>();
+
+        for (int a : A) {
+            set.add(a);
+        }
+
+        int N = set.size();
+
+        int[] C = new int[N];
+
+        int index = 0;
+
+        for (int a : set) {
+            C[index++] = a;
+        }
+
+        for (int i = 0; i < N; i++) {
+
+            if (C[i] > 0 && C[i] <= N) {
+                C[i] = 0;
+            }
+        }
+
+        for (int i = 0; i < N; i++) {
+
+            if (C[i] != 0) {
+                return (i + 1);
+            }
+        }
+		 return (N + 1);
+    }
+
+10. class GFG { 
+    static final int NO_OF_CHARS = 256; 
+    static char count[] = new char[NO_OF_CHARS]; 
+  
+    /* calculate count of characters  
+       in the passed string */
+    static void getCharCountArray(String str) 
+    { 
+        for (int i = 0; i < str.length(); i++) 
+            count[str.charAt(i)]++; 
+    } 
+  
+    /* The method returns index of first non-repeating 
+       character in a string. If all characters are repeating  
+       then returns -1 */
+    static int firstNonRepeating(String str) 
+    { 
+        getCharCountArray(str); 
+        int index = -1, i; 
+  
+        for (i = 0; i < str.length(); i++) { 
+            if (count[str.charAt(i)] == 1) { 
+                index = i; 
+                break; 
+            } 
+        } 
+  
+        return index; 
+    } 
+  
+    // Driver method 
+    public static void main(String[] args) 
+    { 
+        String str = "geeksforgeeks"; 
+        int index = firstNonRepeating(str); 
+  
+        System.out.println( 
+            index == -1
+                ? "Either all characters are repeating or string "
+                      + "is empty"
+                : "First non-repeating character is "
+                      + str.charAt(index)); 
+    } 
+} 
